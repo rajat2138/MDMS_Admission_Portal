@@ -1,0 +1,153 @@
+<%- include("partials/header") %>
+
+<h1 class="heading">Admission Form</h1>
+<!-- Admission Form -->
+
+<div class="col-lg-6 col-md-8 formdiv">
+  <form class="" action="/admission" method="post">
+
+    <!-- Personal Details -->
+    <div class="formsectionheading">
+      <hr><h4>Fill Your Personal Details</h4><hr>
+    </div>
+    <div class="form-row">
+      <label for="fname">Applicant's Full Name </label>
+      <input type="text" class="form-control" name="fullname" placeholder="Applicant's Full Name" required>
+    </div>
+    <div class="form-row">
+      <label for="fname">Applicant's Aadhar Number</label>
+      <input type="text" class="form-control" name="aadhar" placeholder="Applicant's Aadhar Number" required>
+    </div>
+    <div class="form-row">
+      <label for="dob">Date Of Birth</label>
+      <input type="date" class="form-control" name="dob" placeholder="Date of Birth" required>
+    </div>
+    <div class="form-row">
+      <label for="mothername">Mother's Name </label>
+      <input type="text" class="form-control" name="mothername" placeholder="Mother's Name" required>
+    </div>
+    <div class="form-row">
+      <label for="fathername">Father's Name </label>
+      <input type="text" class="form-control" name="fathername" placeholder="Father's Name" required>
+    </div>
+    <div class="form-row">
+      <label for="city">City </label>
+      <input type="text" class="form-control" name="city" placeholder="City" required>
+    </div>
+    <div class="form-row">
+      <label for="pin"> PIN </label>
+      <input type="text" class="form-control" name="pin" placeholder="PIN" required>
+    </div>
+    <div class="form-row">
+      <label for="address"> Address </label>
+      <input type="textarea" class="form-control" name="address" placeholder="Address" required>
+    </div>
+<% if(isEleven) {%>
+    <!-- Academic Details -->
+    <div class="formsectionheading">
+      <hr><h4>Fill Your Academic Details</h4><hr>
+    </div>
+    <div class="form-row">
+      <label for="prevschool"> Previous School Name </label>
+      <input type="text" class="form-control" name="prevschool" placeholder="Previous School Name" required>
+    </div>
+    <div class="form-row">
+      <label for="prevboard"> Previous Board Name </label>
+      <input type="text" class="form-control" name="prevboard" placeholder="Previous Board Name" required>
+    </div>
+    <div class="form-row">
+      <label for="passingyear"> Year Of Passing</label>
+      <input type="number" class="form-control" name="passingyear" placeholder="Year Of Passing" required>
+    </div>
+    <div class="form-row">
+      <label for="registration"> Registration Number of Class IX </label>
+      <input type="text" class="form-control" name="registration" placeholder="Board Registration Number" required>
+    </div>
+    <div class="form-row">
+      <label for="roll"> Roll Number of Class X</label>
+      <input type="text" class="form-control" name="roll" placeholder="Xth Roll Number" required>
+    </div>
+
+    <!-- Results Details -->
+
+    <div class="formsectionheading">
+      <hr><h4>Xth Marks Details</h4><hr>
+    </div>
+    <div class="form-row">
+      <label for="marks">CGPA / Percentage in Class X</label>
+      <input type="number" min="0" max="100" class="form-control" name="marks" placeholder="Total Marks" required>
+    </div>
+    <div class="form-row">
+      <label for="marks">Marks in English</label>
+      <input type="number" min="0" max="100" class="form-control" name="english" placeholder="Marks in English" required>
+    </div>
+    <div class="form-row">
+      <label for="marks">Marks in Science</label>
+      <input type="number" min="0" max="100" class="form-control" name="science" placeholder="Marks in Science" required>
+    </div>
+    <div class="form-row">
+      <label for="marks">Marks in Math</label>
+      <input type="number" min="0" max="100" class="form-control" name="math" placeholder="Marks in Math" required>
+    </div>
+    <div class="form-row">
+      <label for="marks">Marks in Social Studies</label>
+      <input type="number" min="0" max="100" class="form-control" name="sst" placeholder="Marks in Social Studies" required>
+    </div>
+    <div class="form-row">
+      <label for="marks">Marks in Hindi / Sanskrit / Urdu</label>
+      <input type="number" min="0" max="100" class="form-control" name="lang2" placeholder="Marks in Hindi / Sanskrit / Urdu" required>
+    </div>
+
+    <!-- Choice Of Subjects -->
+
+    <div class="formsectionheading">
+      <hr><h4 >Choice Of Stream</h4><hr>
+    </div>
+    <label for="stream">Stream Applied For </label>
+    <br>
+    <label class="formcheckbox"><input type="radio"  name="stream" value="1" required><span> Physics-Chemistry-Math</span></label>
+    <br>
+    <label class="formcheckbox"><input type="radio" name="stream" value="2" required><span> Physics-Chemistry-Biology</span></label>
+    <br>
+    <label class="formcheckbox"><input type="radio" name="stream" value="3" required><span> Commerce</span></label>
+    <br>
+    <label class="formcheckbox"><input type="radio" name="stream" value="4" required><span> Arts</span></label>
+
+<% } %>
+    <!-- TC / SLC -->
+
+    <div class="formsectionheading">
+      <hr><h4>TC / SLC Details</h4><hr>
+      <span style="color:blue;font-size:18px;padding-bottom:2%;">Skip in case you're a student of this school.</span>
+
+    </div>
+    <div class="form-row">
+      <label for="marks">TC / SLC Number</label>
+      <input type="number"class="form-control" name="tcslcno" placeholder="TC / SLC Number" >
+    </div>
+    <div class="form-row">
+      <label for="marks">TC / SLC Issue Date</label>
+      <input type="date" class="form-control" name="tcslcdate" placeholder="TC / SLC Date" >
+    </div>
+
+    <!-- Declaration -->
+
+    <div class="formsectionheading">
+      <hr><h4 class="formsectionheading">Declaration</h4><hr>
+    </div>
+    <div class="form-check declaration">
+      <label class="formcheckbox">
+        <input type="checkbox" name="declaration" value="true" required>
+        <span>I / We hereby declare that all the information mentioned above in the form are correct and true to the best of my knowledge and belief and the admission of mine / my ward may be cancelled if any information in this admission form is found incorrect. I / We shall follow the rules and regulations of the school and maintain regular class.</span>
+      </label>
+    </div>
+
+
+    <div class="form-row">
+      <button type="submit" class="btn btn-primary form-control" name="button">Agree & Submit</button>
+    </div>
+  </form>
+</div>
+
+
+<%- include("partials/footer") %>

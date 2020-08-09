@@ -1,0 +1,52 @@
+<%- include("partials/header") %>
+<h1 class="heading">Upload Documents</h1>
+<!-- Documents Upload Form -->
+
+<div class="col-lg-6 col-md-8 formdiv">
+
+<h3 style="padding-top:6%;.
+">Upload <%= msg %></h3>
+<form action="/upload/<%= req_file %>" method="post" enctype="multipart/form-data">
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <input type="file" name="filedata" class="custom-file-input" accept=".jpg,.jpeg" required>
+      <label class="custom-file-label" aria-describedby="inputGroupFileAddon02">Choose file</label>
+    </div>
+    <div class="input-group-append">
+      <button type="sbmit" name="button" class="input-group-text">Upload</button>
+    </div>
+  </div>
+  </form>
+  <br>
+  <% if(req_file!="photo" & req_file!="sign" & req_file!="aadhar" & req_file!="marksheet" & req_file!="admitcard"){ %>
+    <div class="row">
+      <span style="color:blue;font-size:18px;padding-bottom:2%;">Skip in case you're a student of this school or if you're unable to submit it currently.</span>
+    </div>
+    <div class="row" style="padding-left:45%;padding-right:35%">
+      <a href="/skip"><button type="button" class="btn btn-warning">Skip This</button></a>
+    </div>
+    <br>
+    <% } %>
+</div>
+
+<script>
+$(document).ready(function() {
+    $("#input-21").fileinput({
+        previewFileType: "image",
+        browseClass: "btn btn-success",
+        browseLabel: "Pick Image",
+        browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i> ",
+        removeClass: "btn btn-danger",
+        removeLabel: "Delete",
+        removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i> ",
+        uploadClass: "btn btn-info",
+        uploadLabel: "Upload",
+        uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i> "
+    });
+});
+</script>
+
+
+
+
+<%- include("partials/footer") %>

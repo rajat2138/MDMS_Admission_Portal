@@ -1,0 +1,18 @@
+<%- include("partials/header") %>
+
+<h1 class="heading">Pay Admission Fee</h1>
+<hr>
+<div class="col-lg-6 col-md-8 formdiv">
+<form class="" action="/payment" method="post">
+  <div class="payment">
+    <h4>Username : <%= user.username%></h4>
+    <h4>Applicant's Name : <%= user.fname + " " + user.lname %></h4>
+    <h4>User Id : <%= user._id%></h4>
+    <h4>Amount : <%= amt %> </h4>
+    <button type="submit" name="button">Proceed To Payment</button>
+  </div>
+</form>
+</div>
+
+
+<%- include("partials/footer") %>

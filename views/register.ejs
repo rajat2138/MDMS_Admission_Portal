@@ -1,0 +1,47 @@
+<%- include("partials/header_unauth") %>
+
+<h1 class="heading">Register Yourself</h1>
+
+<div class="col-lg-6 col-md-8 formdiv">
+  <form class="" action="/register" method="post">
+    <div class="form-row">
+      <!-- <label for="fname">First Name </label> -->
+      <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+    </div>
+    <div class="form-row">
+      <!-- <label for="lname">Last Name </label> -->
+      <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
+    </div>
+
+    <select class="custom-select mr-sm-2" name="admcategory" >
+      <option disabled selected hidden>Admission Category</option>
+      <option value="11">Admission In Class XI</option>
+      <option value="9">Admission In Class IX</option>
+      <option value="8">Admission In Class VIII</option>
+      <option value="7">Admission In Class VII</option>
+      <option value="6">Admission In Class VI</option>
+      <option value="5">Admission In Class V</option>
+      <option value="4">Admission In Class IV</option>
+      <option value="3">Admission In Class III</option>
+      <option value="2">Admission In Class II</option>
+      <option value="1">Admission In Class I</option>
+    </select>
+
+
+    <div class="form-row">
+      <!-- <label for="username">Email</label> -->
+      <input type="email" class="form-control" name="username" placeholder="Email" required>
+    </div>
+    <div class="form-row">
+      <!-- <label for="mobile">Mobile</label> -->
+      <input type="text" class="form-control" datavalidation="Number" name="mobile" placeholder="Mobile" required>
+    </div>
+    <div class="form-row">
+      <!-- <label for="password">Password</label> -->
+      <input type="password" class="form-control" name="password" placeholder="Password" required>
+    </div>
+    <button type="submit" class="btn btn-primary form-control" name="button">Register</button>
+  </form>
+</div>
+
+<%- include("partials/footer") %>
